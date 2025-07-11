@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時事ニュースAIクイズ</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/newsquiz.css' %}">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <!-- タイトルに戻る -->
+            <div id="back">
+                <a href="{% url 'quiz_app:index' %}" id="clear_button">タイトルに戻る</a>
+            </div>
+            <div>
+                <!-- 第〇問 -->
+                <h2 id="quiz_counter">ここに入れるよ</h2>
+            </div>
+            <!-- クイズ本文-->
+             <div class="p1" id="source_text">
+                {{ data.source_text}}
+            </div>
+            <!-- クイズ問題文 -->
+            <div class="p2">
+                {{ data.quiz_text }}
+            </div>
+            <div class="select_list">
+                <!-- 選択肢１ -->
+                <p class="btn" id="select_1">
+                    {{ data.correct }}
+                </p>
+                <!-- 選択肢２ -->
+                <p class="btn" id="select_2">
+                    {{ data.incorrect_1 }}
+                </p>
+                <!-- 選択肢３ -->
+                <p class="btn" id="select_3">
+                    {{ data.incorrect_2 }}
+                </p>
+            </div>
+            <div class="correct_content">
+                {% load static %}
+                <img src="{% static 'img/correct.png' %}" alt="丸">
+                <p>正解!</p>
+            </div>
+            <div class="incorrect_content">
+                {% load static %}
+                <img src="{% static 'img/incorrect.png' %}" alt="バツ">
+                <p>不正解...</p>
+            </div>
+        </div>
+        <div id="footer">
+            <!-- 次の問題 -->
+            <a href="{% url 'quiz_app:quiz' %}?change_data=True" class="next is_hidden" id="next_button">次の問題</a>
+        </div>
+    </div>
+    {% load static %} <!-- JavaScriptファイル -->
+    <script src="{% static 'js/quiz_counter.js' %}"></script> <!-- 問題数や正解数をカウントするするスクリプト -->
+    <script src="{% static 'js/select_script.js' %}"></script> <!-- 選択肢に関するスクリプト -->
+</body>
+
+</html>

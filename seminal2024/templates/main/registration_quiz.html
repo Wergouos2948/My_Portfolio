@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+{% block body %}
+    <p>ここでクイズ情報を登録するよ！</p>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ registration.as_p }}
+        <button type="submit">保存</button>
+    </form>
+    <a href="{% url 'quiz_app:index' %}">タイトル</a>
+{% endblock %}

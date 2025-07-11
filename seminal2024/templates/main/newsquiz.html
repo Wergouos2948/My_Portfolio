@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時事ニュースクイズサイト</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/newsquiz.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <h1>時事ニュースクイズ</h1>
+        </div>
+        <div class="content">
+            <div id="h2">
+                <h2>クイズ一覧</h2>
+            </div>
+            <div id="ul">
+                <li class="clickable" id="quiz01"><a href="{% url 'quiz01.html' %}">見出しをクリックすると、URLに飛ぶ</a></li>
+                <li class="clickable" id="myText">見出しをクリックすると、URLに飛ぶ</li>
+                <li class="clickable" id="myText">見出しをクリックすると、URLに飛ぶ</li>
+                <li class="clickable" id="myText">見出しをクリックすると、URLに飛ぶ</li>
+                <li class="clickable" id="myText">見出しをクリックすると、URLに飛ぶ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% load static %}
+<script src="{% static 'js/newsquiz.js' %}"></script>
+</body>
+
+</html>

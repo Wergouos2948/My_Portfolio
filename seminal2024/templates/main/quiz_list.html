@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+{% block body %}
+    <ol>
+        {% for page in page_list %}
+            <li>
+                <a href="{% url 'quiz_app:quiz_detail' page.id %}">{{ page.quiz_text }}</a>
+            </li>
+        {% empty %}
+        <h2>クイズが入ってません</h2>
+        {% endfor %}
+    </ol>
+    <a href="{% url 'quiz_app:index' %}">タイトル</a>
+
+{% endblock %}

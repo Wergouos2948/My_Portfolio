@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時事ニュースAIクイズ</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/quiz_title.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <h1>時事ニュースAIクイズ</h1>
+        </div>
+        <div class="content">
+            <p class="btn"><a href="{% url 'quiz_app:quiz' %}">はじめる</a></p>
+            <p class="btn"><a href="{% url 'quiz_app:registration' %}">クイズ登録</a></p>
+            <p class="btn"><a href="{% url 'quiz_app:page_list' %}">クイズ一覧</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+/* タイトル画面のcss */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 1rem;
+    border: solid;
+    box-sizing: border-box;
+}
+
+#header {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: solid;
+    text-align: center;
+    position: relative;
+    background-image: url('/static/img/header.jpg');
+    /* ここで背景画像を指定 */
+    background-size: cover;
+    /* 画像を全体に表示 */
+    background-position: center;
+}
+
+#header h1::before,
+#header h1::after {
+    content: "~";
+}
+
+.content {
+    flex: 1;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn {
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    padding: 15px 25px;
+    outline: none;
+    border: solid #4747ff 10px;
+    color: black;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    top: -10px;
+    left: -10px;
+    box-shadow: 10px 10px lightblue;
+    transition: all 0.3s;
+}
+
+.btn a{
+    text-decoration: none;
+    color: black;
+}

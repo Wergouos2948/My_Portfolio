@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+{% block body %}
+
+    <h2>{{ quiz.quiz_text }}</h2>
+    <p>正解 : {{ quiz.correct }}</p>
+    <p>不正解1 : {{ quiz.incorrect_1 }}</p>
+    <p>不正解2 : {{ quiz.incorrect_2 }}</p>
+    <p>引用文 :<br> {{ quiz.source_text }}</p>
+    <p>
+        <a href="{{ quiz.source }}" target="_blank">{{ quiz.source }}</a>
+    </p>
+
+    <a href="{% url 'quiz_app:quiz_update' quiz.id %}">編集</a>
+    <br>
+    <a href="{% url 'quiz_app:page_list' %}">クイズ一覧</a>
+    <br>
+    <a href="{% url 'quiz_app:index' %}">タイトルに戻る</a>
+{% endblock %}
